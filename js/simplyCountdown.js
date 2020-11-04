@@ -1,14 +1,4 @@
-/*!
- * Project : simply-countdown
- * File : simplyCountdown
- * Date : 27/06/2015
- * License : MIT
- * Version : 1.3.2
- * Author : Vincent Loy <vincent.loy1@gmail.com>
- * Contributors : 
- *  - Justin Beasley <JustinB@harvest.org>
- *  - Nathan Smith <NathanS@harvest.org>
- */
+
 /*global window, document*/
 (function (exports) {
     'use strict';
@@ -115,9 +105,9 @@
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
+                year: 2016,
+                month: 10,
+                day: 1,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -189,6 +179,7 @@
                 if (parameters.enableUtc) {
                     nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
                         now.getHours(), now.getMinutes(), now.getSeconds());
+                    nowUtc = new Date(2020,9,21,21,0,0);
                     // secondsLeft = (targetDate - nowUtc.getTime()) / 1000;
                     secondsLeft = (nowUtc.getTime() - targetDate ) / 1000;
 
@@ -263,7 +254,8 @@
 
             // Refresh immediately to prevent a Flash of Unstyled Content
             refresh();
-            interval = window.setInterval(refresh, parameters.refresh);
+            //mark_change_here
+            // interval = window.setInterval(refresh, parameters.refresh);
         });
     };
 
